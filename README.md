@@ -8,22 +8,23 @@
 
 ## Instructions
 
-Find the Kaggle competition with your cohort name, i.e. **diamonds-datamad1021**, https://www.kaggle.com/c/diamonds-datamad1021
+Find the Kaggle competition with your cohort name, i.e. **diamonds-databcn0722**, https://www.kaggle.com/competitions/diamonds-databcn0722/overview
 ### train.csv
 * 1. **Processing/cleaning** the dataset: this should be later modularized in functions.
-* 2. **Train** a model (fit & predict) with the data in `train.csv`. This file does contain a **y**.
+* 2. **Train** a model (fit & predict) with the data in `train.csv`. This file DOES contain a **y** (price).
         - Do *train, test, split* on `train.csv` if necessary.
         - Choose the best model regarding the metrics. In this case, the lowest RMSE (error).
 
         2.1. **Export** the model: we don't want to invest time/RAM resources on training the model again in the future.
 
 ### test.csv
-* 3. Apply the same **cleaning** to `test.csv`. This files does NOT contain a **y**.
-* 4. We'll apply the already **trained model** from step 2 to the `text.csv` file. With this we'lñl generate a new column with the predicted values.  
+* 3. Apply the same **cleaning** to `test.csv`. This files does NOT contain a **y** (no price column).
+* 4. We'll apply the already **trained model** from step 2 to the `test.csv` file. With this we'll generate a new column with the predicted values.  
 
 ### my_submission.csv
 * 5. Generate a `submission.csv` file with only two columns: the **ID** of the diamond & the predicted **price** (y).
 
+In other words: use `train.csv` to generate and save a model. Use `test.csv` to predict new values. Then generate a DF with ID & predicted. 
 
 ## Deliverables
 
@@ -33,4 +34,6 @@ Find the Kaggle competition with your cohort name, i.e. **diamonds-datamad1021**
     - Why do those params work better than others?
 
 ## Tips
+- Check often for the df.shape & len of the things your working with
+- Do make sure you ONLY have two columns. When saving the file, you might save an "extra column" (index). So make sure you don't include it. There should only be two columns: id & price
 - Take advantage of the daily submissions. Try at least one today!
